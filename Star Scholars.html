@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Edge School - Star Scholars 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-13b4-622f-98dd-c03717bf3aad/raw?se=2025-07-28T19%3A40%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=852d465a-cc39-5993-a2cb-e15f9cf815f2&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-28T18%3A38%3A42Z&ske=2025-07-29T18%3A38%3A42Z&sks=b&skv=2024-08-04&sig=D5nzc6fItS0g7fMSxgJzPx88jpRYqY2VqA7YkmiColA%3D');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      background-color: rosybrown;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ffffff;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .grade-section {
+      margin-top: 30px;
+    }
+
+    .grade-section h3 {
+      color: #ffcc00;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .search-box {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .search-box input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="Admission List.html">Admission List</a>
+    <a href="Star Scholars.html">Star Scholars</a>
+    <a href="Milestone Dates.html">Milestone Dates</a>
+    <a href="ReachUs.html">Reach Us</a>
+  </div>
+
+  <div class="container">
+    <h1>Nova Edge School</h1>
+    <h2>Star Scholars – Admission List 2025</h2>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search student by name..." onkeyup="searchStudent()">
+    </div>
+
+    <!-- Grade Sections -->
+    <div id="scholarList">
+
+      <div class="grade-section">
+        <h3>Grade 1</h3>
+        <ul>
+          <li>Ayaan Malik</li>
+          <li>Sara Khan</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 2</h3>
+        <ul>
+          <li>Hamza Tariq</li>
+          <li>Minal Fatima</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 3</h3>
+        <ul>
+          <li>Zain Ahmed</li>
+          <li>Aleeza Noor</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 4</h3>
+        <ul>
+          <li>Danyal Raza</li>
+          <li>Laiba Hassan</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 5</h3>
+        <ul>
+          <li>Ali Nawaz</li>
+          <li>Hafsa Javed</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 6</h3>
+        <ul>
+          <li>Usman Shah</li>
+          <li>Neha Asif</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 7</h3>
+        <ul>
+          <li>Rehan Mirza</li>
+          <li>Iqra Siddiqui</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 8</h3>
+        <ul>
+          <li>Bilal Qureshi</li>
+          <li>Sumaiya Anwar</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 9 (Matric)</h3>
+        <ul>
+          <li>Farhan Khan</li>
+          <li>Mariam Zafar</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>Grade 10 (Matric)</h3>
+        <ul>
+          <li>Talha Imran</li>
+          <li>Rabia Saleem</li>
+        </ul>
+      </div>
+
+      <div class="grade-section">
+        <h3>O Level</h3>
+        <ul>
+          <li>Sameer Abbas</li>
+          <li>Nimra Ahsan</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function searchStudent() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const listItems = document.querySelectorAll('#scholarList ul li');
+      listItems.forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(input) ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>

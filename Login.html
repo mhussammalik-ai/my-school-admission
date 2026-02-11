@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Edge School - Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-13b4-622f-98dd-c03717bf3aad/raw?se=2025-07-28T19%3A40%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=852d465a-cc39-5993-a2cb-e15f9cf815f2&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-28T18%3A38%3A42Z&ske=2025-07-29T18%3A38%3A42Z&sks=b&skv=2024-08-04&sig=D5nzc6fItS0g7fMSxgJzPx88jpRYqY2VqA7YkmiColA%3D');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background-color: rgba(0,0,0,0.7);
+      padding: 40px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .login-box h1 {
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .login-box h2 {
+      margin-bottom: 25px;
+      font-weight: normal;
+    }
+
+    .login-box input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .login-box input::placeholder {
+      color: #ddd;
+    }
+
+    .login-box input:focus {
+      outline: 2px solid #ffcc00;
+      background-color: rgba(255,255,255,0.15);
+    }
+
+    .login-box button {
+      width: 95%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffcc00;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: #ffaa00;
+    }
+
+    .login-box .options {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-box .options a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .login-box .options a:hover {
+      text-decoration: underline;
+    }
+
+    .show-pass {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-left: 5%;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .show-pass input {
+      margin-right: 5px;
+    }
+
+    .error-message {
+      color: #ff4444;
+      font-weight: bold;
+      display: none;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 400px) {
+      .login-box {
+        width: 90%;
+        padding: 30px;
+      }
+
+      .login-box input, .login-box button {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>Nova Edge School</h1>
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Email or Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <div class="show-pass">
+      <input type="checkbox" id="showPassword">
+      <label for="showPassword">Show Password</label>
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <div class="error-message" id="errorMessage">Please enter valid credentials.</div>
+
+    <div class="options">
+      <p><a href="#">Forgot Password?</a></p>
+      <p><a href="#">Register New Account</a></p>
+    </div>
+  </div>
+
+  <script>
+    const showPassword = document.getElementById('showPassword');
+    const passwordField = document.getElementById('password');
+
+    showPassword.addEventListener('change', function() {
+      passwordField.type = this.checked ? 'text' : 'password';
+    });
+
+    function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorMessage = document.getElementById('errorMessage');
+
+      if(username === "" || password === "") {
+        errorMessage.textContent = "All fields are required!";
+        errorMessage.style.display = "block";
+      } else {
+        // Store login status
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("username", username);
+
+        errorMessage.style.display = "none";
+
+        // Redirect to main page
+        window.location.href = "index.html";
+      }
+    }
+
+    // Redirect if already logged in
+    window.onload = function() {
+      if(localStorage.getItem("isLoggedIn") === "true") {
+        window.location.href = "index.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
+ 

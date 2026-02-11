@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Edge School - Reach Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-13b4-622f-98dd-c03717bf3aad/raw?se=2025-07-28T19%3A40%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=852d465a-cc39-5993-a2cb-e15f9cf815f2&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-28T18%3A38%3A42Z&ske=2025-07-29T18%3A38%3A42Z&sks=b&skv=2024-08-04&sig=D5nzc6fItS0g7fMSxgJzPx88jpRYqY2VqA7YkmiColA%3D');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      background-color: rosybrown;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: rgba(0,0,0,0.7);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 12px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffcc00;
+    }
+
+    .contact-info, .form-section {
+      margin-top: 30px;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    input, select, textarea, button {
+      width: 95%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #ffcc00;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffaa00;
+    }
+
+    .output-box {
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="Admission List.html">Admission List</a>
+    <a href="Star Scholars.html">Star Scholars</a>
+    <a href="Milestone Dates.html">Milestone Dates</a>
+    <a href="ReachUs.html">Reach Us</a>
+  </div>
+
+  <div class="container">
+    <h1>Reach Us & Admission Form</h1>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <p><strong>Email:</strong> contact@novaedgeschool.edu.pk</p>
+      <p><strong>Phone:</strong> +92 312 987 6543</p>
+      <p><strong>Telephone:</strong> (021) 34987654</p>
+      <p><strong>Address:</strong> Plot #12, Knowledge Avenue, Gulshan Block 3, Karachi, Pakistan</p>
+      <p><strong>Office Hours:</strong> Monday – Saturday | 9:00 AM – 3:00 PM</p>
+    </div>
+
+    <!-- Admission Form -->
+    <div class="form-section">
+      <form id="admissionForm" onsubmit="submitForm(event)">
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="text" id="fatherName" placeholder="Father's Name" required>
+        <input type="text" id="motherName" placeholder="Mother's Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="tel" id="contact" placeholder="Contact Number" required>
+        <input type="text" id="cnic" placeholder="CNIC (e.g. 42101-1234567-8)" required>
+        <select id="classSelect" required>
+          <option value="">-- Select Class --</option>
+          <option>Grade 1</option>
+          <option>Grade 2</option>
+          <option>Grade 3</option>
+          <option>Grade 4</option>
+          <option>Grade 5</option>
+          <option>Grade 6</option>
+          <option>Grade 7</option>
+          <option>Grade 8</option>
+          <option>Grade 9 (Matric)</option>
+          <option>Grade 10 (Matric)</option>
+          <option>O Level</option>
+        </select>
+        <textarea id="notes" placeholder="Additional Notes (Optional)" rows="4"></textarea>
+        <button type="submit">Submit Admission Form</button>
+      </form>
+
+      <!-- Output -->
+      <div class="output-box" id="outputBox">
+        <h2>Submitted Details</h2>
+        <p id="outputText"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('studentName').value;
+      const father = document.getElementById('fatherName').value;
+      const mother = document.getElementById('motherName').value;
+      const email = document.getElementById('email').value;
+      const contact = document.getElementById('contact').value;
+      const cnic = document.getElementById('cnic').value;
+      const classApplied = document.getElementById('classSelect').value;
+      const notes = document.getElementById('notes').value || 'N/A';
+
+      const output = `
+        <strong>Student Name:</strong> ${name}<br>
+        <strong>Father's Name:</strong> ${father}<br>
+        <strong>Mother's Name:</strong> ${mother}<br>
+        <strong>Email:</strong> ${email}<br>
+        <strong>Contact:</strong> ${contact}<br>
+        <strong>CNIC:</strong> ${cnic}<br>
+        <strong>Class:</strong> ${classApplied}<br>
+        <strong>Additional Notes:</strong> ${notes}
+      `;
+
+      document.getElementById('outputText').innerHTML = output;
+      document.getElementById('outputBox').style.display = 'block';
+
+      // Scroll to output
+      document.getElementById('outputBox').scrollIntoView({behavior: 'smooth'});
+    }
+  </script>
+
+</body>
+</html>

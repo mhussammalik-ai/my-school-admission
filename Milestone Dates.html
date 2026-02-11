@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Edge School - Milestone Dates 2025</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-13b4-622f-98dd-c03717bf3aad/raw?se=2025-07-28T19%3A40%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=852d465a-cc39-5993-a2cb-e15f9cf815f2&skoid=add8ee7d-5fc7-451e-b06e-a82b2276cf62&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-28T18%3A38%3A42Z&ske=2025-07-29T18%3A38%3A42Z&sks=b&skv=2024-08-04&sig=D5nzc6fItS0g7fMSxgJzPx88jpRYqY2VqA7YkmiColA%3D');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      background-color: rosybrown;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ffffff;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .date-section {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .date-item {
+      background-color: rgba(255, 204, 0, 0.1);
+      padding: 20px;
+      border-left: 5px solid #ffcc00;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .date-item:hover {
+      background-color: rgba(255, 204, 0, 0.2);
+      transform: scale(1.02);
+    }
+
+    .date-item span {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .countdown {
+      margin-top: 10px;
+      color: #00ffff;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="Admission List.html">Admission List</a>
+    <a href="Star Scholars.html">Star Scholars</a>
+    <a href="Milestone Dates.html">Milestone Dates</a>
+    <a href="ReachUs.html">Reach Us</a>
+  </div>
+
+  <div class="container">
+    <h1>Nova Edge School</h1>
+    <h2>Important Milestone Dates – Admission 2025</h2>
+
+    <div class="date-section">
+
+      <div class="date-item" data-date="2025-08-01">
+        <span>Application Opening:</span> 1st August 2025
+        <div class="countdown"></div>
+      </div>
+
+      <div class="date-item" data-date="2025-08-25">
+        <span>Application Deadline:</span> 25th August 2025
+        <div class="countdown"></div>
+      </div>
+
+      <div class="date-item" data-date="2025-09-01">
+        <span>Interview Schedule:</span> 1st – 5th September 2025
+        <div class="countdown"></div>
+      </div>
+
+      <div class="date-item" data-date="2025-09-10">
+        <span>Merit List Announcement:</span> 10th September 2025
+        <div class="countdown"></div>
+      </div>
+
+      <div class="date-item" data-date="2025-09-18">
+        <span>Fee Submission Deadline:</span> 18th September 2025
+        <div class="countdown"></div>
+      </div>
+
+      <div class="date-item" data-date="2025-09-25">
+        <span>Induction Day:</span> 25th September 2025
+        <div class="countdown"></div>
+      </div>
+
+      <div class="date-item" data-date="2025-10-01">
+        <span>Classes Begin:</span> 1st October 2025
+        <div class="countdown"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const dateItems = document.querySelectorAll('.date-item');
+
+    function updateCountdowns() {
+      const now = new Date();
+      dateItems.forEach(item => {
+        const date = new Date(item.getAttribute('data-date'));
+        const diff = date - now;
+        if (diff > 0) {
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((diff / (1000 * 60)) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+          item.querySelector('.countdown').textContent = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        } else {
+          item.querySelector('.countdown').textContent = `Event Passed`;
+        }
+      });
+    }
+
+    setInterval(updateCountdowns, 1000);
+    updateCountdowns();
+  </script>
+
+</body>
+</html>
